@@ -1,8 +1,7 @@
 package com.laurent.service;
 
-import com.laurent.domain.SignUpCommand;
 import com.laurent.domain.InvalidReason;
-import com.laurent.validation.ValidationResult;
+import com.laurent.domain.SignUpCommand;
 import com.laurent.validation.Validator;
 
 import java.util.Optional;
@@ -12,16 +11,22 @@ public enum SignUpValidationStrategy implements Validator<SignUpCommand, Invalid
         @Override
         public Optional<InvalidReason> validate(SignUpCommand command) {
             return command.getUsername().isEmpty() ?
-                    ValidationResult.invalid(InvalidReason.of("User name can't be empty")) :
-                    ValidationResult.valid();
+                    InvalidReason.of("User name can't be empty") :
+                    Optional.empty();
         }
     },
     FIRST_NAME {
         @Override
         public Optional<InvalidReason> validate(SignUpCommand command) {
             return command.getFirstName().isEmpty() ?
-                    ValidationResult.invalid(InvalidReason.of("First name can't be empty")) :
-                    ValidationResult.valid();
+                    InvalidReason.of("First name can't be empty") :
+                    Optional.empty();
+        }
+    },
+    NOT_USE_VALIDATOR {
+        @Override
+        public Optional<InvalidReason> validate(SignUpCommand toValidate) {
+            return Optional.empty();
         }
     }
 }

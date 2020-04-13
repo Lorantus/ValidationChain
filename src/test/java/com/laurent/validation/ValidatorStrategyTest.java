@@ -3,6 +3,7 @@ package com.laurent.validation;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Optional;
 
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -12,8 +13,8 @@ public class ValidatorStrategyTest {
     public void doitRetournerLesErreursDeLaChaineDeValidation() {
         // GIVEN
         ValidatorStrategy<Object, String> strategies = new ValidatorStrategy<>(asList(
-                toValidate -> ValidationResult.invalid("Error 1"),
-                toValidate -> ValidationResult.invalid("Error 2")));
+                toValidate -> Optional.of("Error 1"),
+                toValidate -> Optional.of("Error 2")));
 
         // WHEN
         List<String> results = strategies.validate(null);

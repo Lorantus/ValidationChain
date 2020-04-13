@@ -1,9 +1,8 @@
 package com.laurent.service;
 
-import com.laurent.domain.SignUpCommand;
 import com.laurent.domain.InvalidReason;
+import com.laurent.domain.SignUpCommand;
 import com.laurent.infra.UserRepository;
-import com.laurent.validation.ValidationResult;
 import com.laurent.validation.ValidationStep;
 import lombok.AllArgsConstructor;
 
@@ -25,7 +24,7 @@ public class SignUpCommandValidation {
         @Override
         public Optional<InvalidReason> validate(SignUpCommand command) {
             if (userRepository.exist(command.getEmail())) {
-                return ValidationResult.invalid(InvalidReason.of("Email [%s] is already taken", command.getEmail()));
+                return InvalidReason.of("Email [%s] is already taken", command.getEmail());
             }
             return thenValidate(command);
         }

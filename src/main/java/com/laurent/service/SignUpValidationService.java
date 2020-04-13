@@ -11,6 +11,8 @@ import com.laurent.validation.ValidatorStrategy;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.laurent.service.SignUpValidationStrategy.FIRST_NAME;
+import static com.laurent.service.SignUpValidationStrategy.USER_NAME;
 import static java.util.Arrays.asList;
 
 public class SignUpValidationService {
@@ -20,7 +22,7 @@ public class SignUpValidationService {
         this.validatorStrategy = new ValidatorStrategy<>(new ArrayList<Validator<SignUpCommand, InvalidReason>>() {{
                 add(new CommandConstraintsValidationStep()
                         .then(new EmailDuplicationValidationStep(userRepository)));
-                addAll(asList(SignUpValidationStrategy.values()));
+                addAll(asList(FIRST_NAME, USER_NAME));
             }});
     }
 

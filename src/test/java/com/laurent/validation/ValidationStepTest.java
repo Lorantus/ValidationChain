@@ -46,7 +46,7 @@ public class ValidationStepTest {
 
         @Override
         public Optional<String> validate(Object toValidate) {
-            return value == null ? ValidationResult.valid() : ValidationResult.invalid(value);
+            return value == null ? Optional.empty() : Optional.of(value);
         }
     }
 }
