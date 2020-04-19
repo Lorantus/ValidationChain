@@ -1,6 +1,6 @@
 package com.laurent.service;
 
-import com.laurent.domain.InvalidReason;
+import com.laurent.action.InvalidReason;
 import com.laurent.domain.SignUpCommand;
 import com.laurent.infra.UserRepository;
 import com.laurent.validation.ValidationStep;
@@ -8,7 +8,7 @@ import lombok.AllArgsConstructor;
 
 import java.util.Optional;
 
-public class SignUpCommandValidation {
+public class SignUpValidation {
 
     public static class CommandConstraintsValidationStep extends ValidationStep<SignUpCommand, InvalidReason> {
         @Override

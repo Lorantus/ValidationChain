@@ -1,6 +1,9 @@
 package com.laurent.domain;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 @EqualsAndHashCode(of = "email")
 @Getter
@@ -12,4 +15,8 @@ public class SignUpCommand {
     String email;
     String username;
     String rawPassword;
+
+    public User getUser() {
+        return new User();
+    }
 }

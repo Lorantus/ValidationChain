@@ -1,6 +1,6 @@
 package com.laurent.service;
 
-import com.laurent.domain.InvalidReason;
+import com.laurent.action.InvalidReason;
 import com.laurent.domain.SignUpCommand;
 import com.laurent.validation.Validator;
 

@@ -1,4 +1,4 @@
-package com.laurent.domain;
+package com.laurent.action;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

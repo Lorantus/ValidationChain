@@ -1,7 +1,7 @@
 package com.laurent.service;
 
+import com.laurent.action.InvalidReason;
 import com.laurent.domain.SignUpCommand;
-import com.laurent.domain.InvalidReason;
 import com.laurent.infra.UserRepository;
 import org.junit.Test;
 
