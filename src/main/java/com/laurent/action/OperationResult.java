@@ -62,7 +62,10 @@ public class OperationResult<T> {
         }
     }
 
-    private List<InvalidReason> concatInvalidReasons(OperationResult<?> c1, OperationResult<?> c2) {
+    private List<InvalidReason> concatInvalidReasons(
+            OperationResult<?> c1,
+            OperationResult<?> c2)
+    {
         return Stream.concat(c1.invalidReasons.stream(), c2.invalidReasons.stream())
             .collect(toList());
     }
@@ -88,7 +91,10 @@ public class OperationResult<T> {
         });
     }
 
-    public OperationResult<T> concatMerge(OperationResult<T> other, Function<T, T> merge) {
+    public OperationResult<T> concatMerge(
+            OperationResult<T> other,
+            Function<T, T> merge)
+    {
         if(!(isValid() || other.isValid())) {
             return OperationResult.of(concatInvalidReasons(this, other));
         }

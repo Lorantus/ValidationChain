@@ -13,7 +13,10 @@ public class InvalidReason {
     private final String reason;
     private final String[] args;
 
-    public static Optional<InvalidReason> of(String reason, String... args) {
+    public static Optional<InvalidReason> of(
+            String reason,
+            String... args)
+    {
         return Optional.of(new InvalidReason(reason, args));
     }
 }

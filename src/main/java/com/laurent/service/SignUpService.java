@@ -13,7 +13,10 @@ public class SignUpService {
     private final SignUpValidationService signUpValidationService;
     private final UserRepository userRepository;
 
-    public SignUpService(SignUpValidationService signUpValidationService, UserRepository userRepository) {
+    public SignUpService(
+            SignUpValidationService signUpValidationService,
+            UserRepository userRepository)
+    {
         this.signUpValidationService = signUpValidationService;
         this.userRepository = userRepository;
     }
